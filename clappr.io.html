@@ -1,0 +1,35 @@
+<head>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+	<meta name="referrer" content="no-referrer">
+</head>
+<body>
+	<div id="player-wrapper"></div>
+	<script>
+		var meta = document.createElement('meta');
+		meta.name = "referrer";
+		meta.content = "no-referrer";
+		document.getElementsByTagName('head')[0].appendChild(meta);
+	</script>
+	<script>
+		var playerElement = document.getElementById("player-wrapper");
+	
+		var player = new Clappr.Player({
+			source: "https://vsports.bet365.com/L1_C146_S1/playlist_low.m3u8", 
+			poster: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HelloWorld.svg/512px-HelloWorld.svg.png",
+			width: 514,
+			height: 289,
+			mute: true,
+			autoPlay: true,
+			hideMediaControl: true,
+			disableVideoTagContextMenu: true,
+			watermark: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HelloWorld.svg/512px-HelloWorld.svg.png", position: 'top-right',
+			watermarkLink: "http://example.net/",
+			playbackNotSupportedMessage: "이 브라우저에서는 동영상을 지원하지 않습니다, 다른 브라우저를 이용해주세요"
+		});
+	
+		player.attachTo(playerElement);
+	</script>
+
+	<a href="https://github.com/clappr/clappr" target="_blank">Using the Player</a>
+	<a href="http://jsfiddle.net/psYaT/9/" target="_blank">화면 비율 계산기</a>
+</body>
